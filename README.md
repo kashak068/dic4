@@ -13,13 +13,44 @@
 
 **狀態：** 期末版（2026-11-24）
 
+## 📄 IEEE 會議論文成果與「一好一壞」對比 PDF 呈現
+
+為滿足學術會議審稿規範（IEEE Conference Standard）與 DIC4 期末專題要求，本專案提供**完整 Overleaf 專案源碼包**、**兩份對比 PDF（瑕疵版 vs. 優化版）**與**頁面視覺化預覽**：
+
+| 交付項目 | 檔案連結 | 說明 |
+| :--- | :--- | :--- |
+| 🌟 **重構優化版論文 (Good)** | [**📄 paper_draft_refactored_good.pdf**](paper/paper_draft_refactored_good.pdf) | 符合 IEEE 雙欄格式，具備完整 A~F 摘要、重構 Introduction/Related Work、Table I 比較矩陣與實驗數據 |
+| ⚠️ **未重構瑕疵對照版 (Bad)** | [**📄 paper_draft_flawed_bad.pdf**](paper/paper_draft_flawed_bad.pdf) | 包含紅色警告框（Callout），詳細拆解學生初稿常見之流水帳、缺乏量化指標與缺乏規格驅動等拒稿瑕疵 |
+| 📦 **Overleaf 一鍵上傳專案包** | [**overleaf_airsleuth_ieee.zip**](overleaf_airsleuth_ieee.zip) | 內含 `main.tex`、`references.bib`、`IEEEtran.cls` 與 4 張高解析圖表，上傳 Overleaf 即可一鍵編譯 |
+| 📁 **LaTeX 原始碼目錄** | [**overleaf_airsleuth_ieee/**](overleaf_airsleuth_ieee/) | 可直接於 GitHub 檢閱完整的 LaTeX 原始碼與 BibTeX 文獻條目 |
+
+---
+
+### 🔍 論文視覺化預覽與「一好一壞」核心對比
+
+#### 1. 摘要與引言對比（Page 1 Preview）
+
+| 🌟 重構優化版 (Good Draft - 符合 IEEE 規範) | ⚠️ 未重構瑕疵版 (Bad Draft - 附評審拒稿標註) |
+| :---: | :---: |
+| <img src="paper/figures/preview_good_p1.png" width="380" alt="Good Draft Page 1" /> | <img src="paper/figures/preview_bad_p1.png" width="380" alt="Bad Draft Page 1" /> |
+| **優點特色**：<br/>• 嚴格遵循 **A~F (Attention, Bottleneck, Cure, Development, Experiments, Findings)** 結構<br/>• 具備精確量化數據（84% 準確率、0 幻覺率、99% 故障拒斥）<br/>• 提出五段式學術引言，確立 MCP / Tool-Grounded 邊界 | **致命缺陷（附審稿紅框標註）**：<br/>• 摘要無結構且缺乏具體數據，充斥「works well」等主觀宣稱<br/>• 未帶出全球與台灣 2025 新 AQI 加嚴背景，未點出 31% 遵從率悖論<br/>• 缺乏對感測器吸濕膨脹與多尺度空間解耦瓶頸的定義 |
+
+#### 2. 相關研究與 SOTA 比較表對比（Page 2 Preview）
+
+| 🌟 重構優化版 (Good Draft - 包含 Table I 橫向評估矩陣) | ⚠️ 未重構瑕疵版 (Bad Draft - 標註流水帳缺失) |
+| :---: | :---: |
+| <img src="paper/figures/preview_good_p2.png" width="380" alt="Good Draft Page 2" /> | <img src="paper/figures/preview_bad_p2.png" width="380" alt="Bad Draft Page 2" /> |
+| **優點特色**：<br/>• 分立 4 大子領域深入評析既有方法盲點<br/>• 包含 **Table I SOTA 橫向比較矩陣**（對比傳統 AQI 網站、ChatGPT、Neuro-Air 與 AirSleuth）<br/>• 完整定義 2/8/15 km 多尺度空間分解演算法與正則數值追溯防護網 | **致命缺陷（附審稿紅框標註）**：<br/>• 嚴重「流水帳（Laundry List）」堆砌論文，無方法學分類<br/>• 未解釋既有科研 Agent（如 Neuro-Air）在民眾端嘈雜 IoT 感測網為何失效<br/>• 演算法缺乏數學門檻定義（無局部超量 $E$ 與同動一致性 $C$） |
+
+---
+
 ## 期末繳交物
 
 | 繳交項目 | 位置 |
 |---|---|
 | GitHub（完整程式、資料來源、執行與測試方式） | 本 repo |
 | Demo site | `app/streamlit_app.py`（部署步驟見下方「Demo 網站」） |
-| 研討會格式論文初稿（ICEIB 2027，Engineering Proceedings 範本） | [paper/AirSleuth_ICEIB2027_draft.docx](paper/AirSleuth_ICEIB2027_draft.docx)、[PDF](paper/AirSleuth_ICEIB2027_draft.pdf)；原稿 [paper/airsleuth_iceib2027.md](paper/airsleuth_iceib2027.md) |
+| **IEEE 研討會論文與對比 PDF** | 🌟 [優化版 PDF](paper/paper_draft_refactored_good.pdf) ｜ ⚠️ [瑕疵版 PDF](paper/paper_draft_flawed_bad.pdf) ｜ 📦 [Overleaf 專案包](overleaf_airsleuth_ieee.zip) ｜ [原始碼](overleaf_airsleuth_ieee/main.tex) |
 | 期末簡報（> 20 頁，附講稿） | [slides/final/](slides/final/) |
 | 影片（> 10 分鐘，AI 語音旁白） | `slides/final/AirSleuth_期末報告影片.mp4`（檔案大，不進版控；上傳 YouTube） |
 | DESIGN.md | [DESIGN.md](DESIGN.md) |
